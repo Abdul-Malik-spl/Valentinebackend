@@ -5,9 +5,9 @@ let userSchema=mongoose.Schema({
     userMail:{type:String,required:true,unique:true},
     partnerName:{type:String},
     partnerMail:{type:String},
-    partnerId:{type:mongoose.Schema.Types.ObjectId,ref:'User'},
+    partnerId:{type:mongoose.Schema.Types.ObjectId,ref:'User',default:null},
     password:{type:String,required:true}
 },{timestamps:true});
-let SignModel=mongoose.model('User',signScheema)
+let userModel=mongoose.model('User',userSchema)
 
-module.exports=SignModel
+module.exports=userModel
